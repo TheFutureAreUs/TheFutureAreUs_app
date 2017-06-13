@@ -3,3 +3,13 @@
   // padding: 0.5em 1em !important;
   border-radius: 50px;
 }
+
+.navbar-nav > li > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.navbar-right {
+  margin-right: -12px;
+  color: #e7e7e7;
+}
