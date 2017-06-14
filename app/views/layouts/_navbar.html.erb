@@ -1,6 +1,10 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <%= link_to "TheFutureAreUs", root_path, class: "navbar-brand"%>
+    <ul class="nav navbar-nav navbar-left">
+        <li class="button-left left-side"><%= link_to "Home", root_path %></li>
+        <li class="button-left left-side"><%= link_to "Team", root_path %></li>
+        <li class="button-left left-side"><%= link_to "Top Listings", root_path %></li>
+    </ul>
     <ul class="nav navbar-nav navbar-right">
       <!-- Add if statement for signed in / signed out users -->
       <li class="button button-list">
