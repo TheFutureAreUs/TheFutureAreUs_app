@@ -5,41 +5,32 @@
         <%= form_for(@listing) do |f| %>
             <%= f.label :title%><br />
             <%= f.text_field :title, class: "_field"%>
-
             <br />
             <br />
-
             <%= f.label :description %><br />
             <%= f.text_area :description, class: "desc_field" %>
-
             <br />
             <br />
-
+            <%= f.label :category %>
+            <%= f.select :category, Category.all.map { |f| [f.name, f.id] } %>
+            <br />
+            <br />
             <%= f.label :city %><br />
             <%= f.text_field :city, class: "_field" %>
-
             <br />
             <br />
-
             <%= f.label :state %><br />
             <%= f.text_field :state, class: "state_field" %>
-
             <br />
             <br />
-
-
-            <%= f.label :zipcode %><br />
-            <%= f.text_field :zipcode, class: "zip_field" %>
-
-            <br />
-            <br />
-
             <%= f.label :college %><br />
             <%= f.text_field :college, class: "college_field" %>
-
             <br />
             <br />
-
+            <%= f.label :zipcode %><br />
+            <%= f.text_field :zipcode, class: "zip_field", maxlength: "5" %>
+            <br />
+            <br />
             <%= f.submit 'Submit', class: "button" %>
         <% end %>
     </div>

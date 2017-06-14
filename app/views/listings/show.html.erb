@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Show Listings</h1>
+  <h2><%= @listing.title %></h2>
+    <p><%= @listing.description %></p>
+    <footer>
+      <p>post id: <%= @listing.id %></p>
+      <p>posted <%= time_ago_in_words(@listing.created_at) %></p>
+    </footer>
+</div>
