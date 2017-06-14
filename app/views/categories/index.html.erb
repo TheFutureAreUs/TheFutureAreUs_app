@@ -4,17 +4,17 @@
       <h1>TheFuture Are Us</h1>
     </div>
     <ul>
-      <li>Automotive</li>
-      <li>Beauty</li>
-      <li>Technology</li>
-      <li>Academic</li>
-      <li>Art/Design</li>
-      <li>Videography/Photography</li>
-      <li>Culinary</li>
-      <li>Fashion</li>
-      <li>Fitness</li>
-      <li>Childcare</li>
-      <li>Event Services</li>
+      <li class="categories"><%= link_to 'Automotive', category_path(@automotive) %></li>
+      <li class="categories"><%= link_to 'Beauty', category_path(@beauty) %></li>
+      <li><%= link_to 'Technology', category_path(@technology) %></li>
+      <li class="categories"><%= link_to 'Academic', category_path(@academic) %></li>
+      <li class="categories"><%= link_to 'Art/Design', category_path(@art) %></li>
+      <li class="categories"><%= link_to 'Videography/Photography', category_path(@photography) %></li>
+      <li class="categories"><%= link_to 'Culinary', category_path(@culinary) %></li>
+      <li class="categories"><%= link_to 'Fashion', category_path(@fashion) %></li>
+      <li class="categories"><%= link_to 'Fitness', category_path(@fitness) %></li>
+      <li class="categories"><%= link_to 'Childcare', category_path(@childcare) %></li>
+      <li class="categories"><%= link_to 'Event Services', category_path(@event) %></li>
     </ul>
   </div>
 </body>

@@ -3,6 +3,10 @@
     <%= link_to "TheFutureAreUs", root_path, class: "navbar-brand"%>
     <ul class="nav navbar-nav navbar-right">
       <!-- Add if statement for signed in / signed out users -->
+      <li class="button button-list">
+        <a href="#">Search Listings</a>
+      </li>
+      <li class="button button-list"><%= link_to "Create A Listing!", new_listing_path %></li>
       <li class="button"><a href="#">Sign In / Sign Up</a></li>
     </ul>
   </div>

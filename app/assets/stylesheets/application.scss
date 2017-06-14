@@ -1,9 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
 // Moddules/colors----------------------------------------------------------------------
 @import "modules/buttons";
 @import "contacts";
+@import "listings";
 $highlight: #8bc6db;
 $dark: #424652;
 //-----------------------------------------------------------------------------------
@@ -33,7 +33,7 @@ body {
 }
 
 #main_footer {
-  position: absolute;
+  position: relative;
   width: 100%;
   bottom: 0;
   height: 80px;
