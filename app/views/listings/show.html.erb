@@ -5,5 +5,9 @@
     <footer>
       <p>post id: <%= @listing.id %></p>
       <p>posted <%= time_ago_in_words(@listing.created_at) %></p>
+      <% if @listing.user = current_user %>
+        <p><%= link_to 'Edit', edit_listing_path %></p>
+        <p><%= link_to 'Delete', @listing, data: {confirm: "Are you sure you want to delete this listing?"}, method: :delete %></p>
+      <% end %>
     </footer>
 </div>
