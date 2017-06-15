@@ -18,6 +18,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'mail_form', '~> 1.6'
 gem 'acts-as-taggable-on', '~> 4.0'
+gem 'devise', '~> 4.3'
 # gem 'bootstrap_form'
 #------------------------------------------------------------------------------------
 
