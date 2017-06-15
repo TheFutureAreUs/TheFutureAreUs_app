@@ -13,6 +13,7 @@ class CategoriesController < ApplicationController
     @fitness = @category[8]
     @childcare = @category[9]
     @event = @category[10]
+    @other = @category[11]
   end
 
   def show
