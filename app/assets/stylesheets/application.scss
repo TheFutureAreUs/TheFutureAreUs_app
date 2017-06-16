@@ -4,6 +4,7 @@
 @import "modules/buttons";
 @import "contacts";
 @import "listings";
+@import "create";
 $highlight: #8bc6db;
 $dark: #424652;
 //-----------------------------------------------------------------------------------
@@ -42,14 +43,14 @@ $dark: #424652;
 
 // Footer here-----------------------------------------------------------------------
 body {
-  margin-bottom: 60px;
+  // margin-bottom: 60px;
 }
 
 #main_footer {
   position: relative;
   width: 100%;
   bottom: 0;
-  height: 80px;
+  height: 60px;
   background-color: white;
   padding: 2.5em 5%;
 	border-top: 1px solid $border;

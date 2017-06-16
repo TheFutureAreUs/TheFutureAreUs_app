@@ -10,8 +10,8 @@
       <li class="button button-list">
         <a href="#">Search Listings</a>
       </li>
-      <li class="button button-list"><%= link_to "Create A Listing!", new_listing_path %></li>
       <% if user_signed_in? %>
+        <li class="button button-list"><%= link_to "Create A Listing!", new_listing_path %></li>
         <li><%= link_to 'My Account', edit_user_registration_path %></li>
         <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
         <li><%= link_to 'My Listings', mylistings_path %></li>

@@ -1,0 +1,15 @@
+.card {
+  border: none;
+  border-radius: 0;
+  // height: 400px;
+  // margin-bottom: 20px;
+  background-color: white;
+}
+
+.card-block {
+  padding: 10px;
+  .card-title {
+    font-size: 1.3rem;
+    margin-bottom: 0;
+  }
+}

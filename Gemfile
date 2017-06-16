@@ -20,6 +20,7 @@ gem 'mail_form', '~> 1.6'
 gem 'acts-as-taggable-on', '~> 4.0'
 gem 'devise', '~> 4.3'
 # gem 'bootstrap_form'
+gem 'tinymce-rails', '~> 4.3'
 #------------------------------------------------------------------------------------
 
 group :development, :test do

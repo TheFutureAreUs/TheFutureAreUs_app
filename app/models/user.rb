@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :listings, dependent: :destroy
+
+  validates :email, format: { with: /\.edu\z/, message: "only allows .edu addresses" }
+
 end
