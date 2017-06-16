@@ -1,0 +1,11 @@
+<h1>Edit Profile<h1>
+
+<%= form_for(@user, url: users_path) do |f| %>
+    <div class="field">
+        <%= f.label :username %><br />
+        <%= f.text_field :username %>
+    </div>
+    <div class="actions">
+        <%= f.submit "Submit", edit_user_path %>
+    </div>
+<% end %>
