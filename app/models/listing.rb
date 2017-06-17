@@ -4,4 +4,12 @@ class Listing < ActiveRecord::Base
   # belongs_to :subcategory
   belongs_to :user
   validates :user_id, presence: true
+
+  geocode_by :full_address
+  after_validation :geocode
+
+  def full_address 
+    [city, state, zipcode].join(', ')
+  end
+  
 end
