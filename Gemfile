@@ -21,6 +21,8 @@ gem 'acts-as-taggable-on', '~> 4.0'
 gem 'devise', '~> 4.3'
 # gem 'bootstrap_form'
 gem 'tinymce-rails', '~> 4.3'
+gem 'carrierwave', '~> 1.1'
+gem 'mini_magick', '~> 4.7'
 #------------------------------------------------------------------------------------
 
 group :development, :test do

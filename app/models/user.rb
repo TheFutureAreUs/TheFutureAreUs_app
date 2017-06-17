@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :listings, dependent: :destroy
 
+  mount_uploader :avatar, AvatarUploader
   
 
   # The section below allows users to have a username, also they must have an email
@@ -26,13 +27,13 @@ class User < ApplicationRecord
   # Makes sure that users can't use another persons username
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 
-  validate :validate_username
+  #validate :validate_username
 
-  def validate_username
-    if User.where(email: username).exists?
-      errors.add(:username, :invalid)
-    end
-  end
+  #def validate_username
+    #if User.where(email: username).exists?
+      #errors.add(:username, :invalid)
+    #end
+  #end
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
