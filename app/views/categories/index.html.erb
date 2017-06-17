@@ -3,6 +3,18 @@
     <div class="page-header">
       <h1>TheFuture Are Us</h1>
     </div>
+
+    <ul>
+      <li>
+        <%= form_tag search_listings_path, method: :get do |f|%>
+          <%= text_field_tag :search, nil, class: 'button button-list', placeholder: 'search' %>
+          <%= text_field_tag :location, nil, class: 'button button-list', placeholder: 'near'%>
+          <%= select_tag :category, options_for_select(Category.all.map{ |c| [c.name, c.id]}) %>
+          <%= submit_tag '>' %>
+        <% end %>
+      </li>
+    </ul>
+
     <ul>
       <li class="categories"><%= link_to 'Automotive', category_path(@automotive) %></li>
       <li class="categories"><%= link_to 'Beauty', category_path(@beauty) %></li>

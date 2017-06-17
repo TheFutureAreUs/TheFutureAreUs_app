@@ -35,6 +35,10 @@ class ListingsController < ApplicationController
     @listings = Listing.where(user: current_user)
   end
 
+  def search
+    @listing = Listing.search(params)
+  end
+
   private
 
     def listing_params

@@ -2,7 +2,14 @@ Rails.application.routes.draw do
   devise_for :users
   resources :contacts, only: [:new, :create]
   resources :categories
-  resources :listings
+
+  # Adding search functionality
+  resources :listings do
+    collection do 
+      get 'search'
+    end 
+  end 
+
   resources :users
 
 
