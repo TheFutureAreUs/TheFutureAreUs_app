@@ -5,7 +5,7 @@ class Listing < ActiveRecord::Base
   belongs_to :user
   validates :user_id, presence: true
 
-  geocode_by :full_address
+  geocoded_by :full_address
   after_validation :geocode
 
   def full_address 
