@@ -23,6 +23,7 @@ gem 'geocoder', '~> 1.4'
 gem 'tinymce-rails', '~> 4.3'
 gem 'carrierwave', '~> 1.1'
 gem 'mini_magick', '~> 4.7'
+gem 'font-awesome-sass', '~> 4.7'
 #------------------------------------------------------------------------------------
 
 group :development, :test do

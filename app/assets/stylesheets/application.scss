@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 // Moddules/colors----------------------------------------------------------------------
 @import "modules/buttons";
 @import "modules/avatar";
@@ -11,6 +13,24 @@ $dark: #424652;
 //-----------------------------------------------------------------------------------
 
 // Navbar here-----------------------------------------------------------------------
+.well-transparent {
+  background-color: white; 
+}
+
+.eyeglass {
+  float: right;
+  top: 14px;
+  right: 192px;
+  position: relative;
+  z-index: 2;
+  color: #777;  
+}
+
+.search-bar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .navbar-default {
   background-color: white;
   border-color: #e7e7e7;

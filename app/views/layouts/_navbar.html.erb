@@ -6,10 +6,12 @@
         <li class="button-left left-side"><%= link_to "Top Listings", root_path %></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <!-- Add if statement for signed in / signed out users -->
-      <!--<li class="button button-list">
-        <a href="#">Search Listings</a>
-      </li> -->
+      <li>
+          <%= form_tag search_listings_path, method: :get do |f|%>
+          <%= icon('search', class: 'eyeglass') %>
+            <%= text_field_tag :search, nil, class: 'button button-list search-bar well well-transparent', placeholder: 'search' %>
+          <% end %>
+      </li>
       <% if user_signed_in? %>
         <li class="button button-list"><%= link_to "Create A Listing!", new_listing_path %></li>
         <li><%= link_to(avatar_for(current_user, size: 35), current_user) %></li>
