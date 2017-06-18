@@ -2,9 +2,11 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Bubbler+One');
 // Moddules/colors----------------------------------------------------------------------
 @import "modules/buttons";
 @import "modules/avatar";
+@import "modules/user";
 @import "contacts";
 @import "listings";
 @import "create";
@@ -20,7 +22,7 @@ $dark: #424652;
 .eyeglass {
   float: right;
   top: 14px;
-  right: 192px;
+  right: 210px;
   position: relative;
   z-index: 2;
   color: #777;  
@@ -35,6 +37,7 @@ $dark: #424652;
   background-color: white;
   border-color: #e7e7e7;
   padding: 1.0em;
+  padding-bottom: 0em;
 }
 
 .left-side {
@@ -64,7 +67,9 @@ $dark: #424652;
 
 // Footer here-----------------------------------------------------------------------
 body {
+  font-family: 'Bubbler One', sans-serif;
   // margin-bottom: 60px;
+  background: rgb(244, 245, 247);
 }
 
 #main_footer {

@@ -1,0 +1,28 @@
+.edit-profile {
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.09);
+  width: 50%;
+  margin: auto;
+  margin-bottom: 50px;
+  background: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  border-radius: 3px;
+}
+
+input[type="file"] {
+  display: inline;
+}
+
+.sub-button {
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.base-desc {
+  height: 100px;
+  width: 300px;
+}
+
+.base-user {
+  width: 300px;
+}

@@ -1,4 +1,4 @@
-<h1 class="page_title">New Listing</h1>
+<h1 class="page_title">Create Listing</h1>
 
 <%= form_for(@listing) do |f| %>
   <div class="row">
@@ -7,7 +7,7 @@
       <div class="card">
         <div class="card-block">
           <% if @listing.new_record? %>
-          <h4 class="card-title">New Listing</h4>
+          <h4 class="card-title"></h4>
           <% else %>
           <h4 class="card-title">
             <b>Edit</b>
@@ -75,12 +75,12 @@
       <% if @listing.persisted? %>
       <%= link_to 'Show', @listing %> |
       <% end %>
-      <%= link_to 'Back' %>
+      <%= link_to 'Back', root_path %>
 
     </div>
     <div class="col-md-8 new-description">
       <div class="field">
-        <%= f.text_area :description %>
+        <%= f.text_area :body %>
       </div>
     </div>
   </div>
@@ -88,42 +88,3 @@
 
 
 
-<!-- <div class="container-fluid">
-    <div class="listing-form">
-        <%= form_for(@listing) do |f| %>
-            <%= f.label :title%><br />
-            <%= f.text_field :title, class: "_field"%>
-            <br />
-            <br />
-            <%= f.label 'Tags' %><br />
-            <%= f.text_area :tag_list, class: 'form-control' %>
-            <br />
-            <br />
-            <%= f.label :description %><br />
-            <%= f.text_area :description, class: "desc_field" %>
-            <br />
-            <br />
-            <%= f.label :category %>
-            <%= f.select :category, Category.all.map { |f| [f.name, f.id] } %>
-            <br />
-            <br />
-            <%= f.label :city %><br />
-            <%= f.text_field :city, class: "_field" %>
-            <br />
-            <br />
-            <%= f.label :state %><br />
-            <%= f.text_field :state, class: "state_field" %>
-            <br />
-            <br />
-            <%= f.label :college %><br />
-            <%= f.text_field :college, class: "college_field" %>
-            <br />
-            <br />
-            <%= f.label :zipcode %><br />
-            <%= f.text_field :zipcode, class: "zip_field", maxlength: "5" %>
-            <br />
-            <br />
-            <%= f.submit 'Submit', class: "button" %>
-        <% end %>
-    </div>
-</div> -->
