@@ -1,13 +1,27 @@
-<div class="container">
-  <h1>Show Listings</h1>
-  <h2><%= @listing.title %></h2>
-    <p><%= @listing.description %></p>
-    <footer>
-      <p>post id: <%= @listing.id %></p>
-      <p>posted <%= time_ago_in_words(@listing.created_at) %></p>
-      <% if @listing.user = current_user %>
-        <p><%= link_to 'Edit', edit_listing_path %></p>
-        <p><%= link_to 'Delete', @listing, data: {confirm: "Are you sure you want to delete this listing?"}, method: :delete %></p>
-      <% end %>
-    </footer>
+<div class="topbar">
+  <div class="container">
+    <div class="vertical-center">
+      <%= link_to 'rubyslist', root_path %> > <%= link_to @listing.category.name, category_path(@listing.category) %> >
+  </div>
+</div>
+
+<div id="post-panel">
+  <div class="post-panel">
+    <div>
+      <div>
+        <h4 class="listing-title"><%= link_to @listing.title, @listing %></h1>
+        <p class="tags"><%= raw @listing.tags.map { |t| link_to t.name, listings_path(tag: t.name) }.join(', ') %></p>
+        <%= link_to @listing do %>
+          <p class="card-text"><%= truncate(@listing.description, length: 130) %></p>
+        <% end %>
+      </div>
+        <% if @listing.user = current_user %>
+          <p><%= link_to 'edit', edit_listing_path %></p>
+        <p><%= link_to 'delete', @listing, data: {confirm: "Are you sure you want to delete this listing?" }, method: :delete %></p>
+        <% end %>
+        <p>post id: <%= @listing.id %></p>
+        <button type="button">reply</button>
+        posted <%= time_ago_in_words(@listing.created_at) %>
+    </div>
+  </div>
 </div>

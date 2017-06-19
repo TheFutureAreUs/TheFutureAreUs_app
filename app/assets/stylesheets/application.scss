@@ -7,6 +7,7 @@
 @import "modules/buttons";
 @import "modules/avatar";
 @import "modules/user";
+@import "modules/listingsshow";
 @import "contacts";
 @import "listings";
 @import "create";
@@ -34,6 +35,10 @@ $dark: #424652;
 }
 
 .navbar-default {
+  border: 1px solid rgba(0,0,0,0.09);
+  background: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  border-radius: 3px;
   background-color: white;
   border-color: #e7e7e7;
   padding: 1.0em;

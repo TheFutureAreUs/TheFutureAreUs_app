@@ -12,11 +12,13 @@ class CategoriesController < ApplicationController
     @fashion = @category[7]
     @fitness = @category[8]
     @childcare = @category[9]
-    @event = @category[10]
+    @event_services = @category[10]
     @other = @category[11]
   end
 
   def show
+    @listings = Listing.where(category_id: params[:id]).order("created_at DESC")
+    @category = Category.find(params[:id])
   end
 
 end

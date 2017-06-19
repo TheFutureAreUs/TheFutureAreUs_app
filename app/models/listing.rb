@@ -1,9 +1,16 @@
 class Listing < ActiveRecord::Base
   belongs_to :category
-  acts_as_taggable # Alias for acts_as_taggable_on :tags
-  # belongs_to :subcategory
   belongs_to :user
-  validates :user_id, presence: true
+  # belongs_to :subcategory
+  validates_presence_of :user_id
+  validates_presence_of :title
+  validates_presence_of :description
+  validates_presence_of :body
+  validates_presence_of :city
+  validates_presence_of :state
+
+
+  acts_as_taggable # Alias for acts_as_taggable_on :tags
 
   geocoded_by :full_address
   after_validation :geocode

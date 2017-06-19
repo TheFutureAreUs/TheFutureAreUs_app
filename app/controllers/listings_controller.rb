@@ -7,8 +7,12 @@ class ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
     @listing.user = current_user
-    @listing.save
-    redirect_to root_path
+    if @listing.save
+      redirect_to @listing
+    else 
+      flash[:alert] = @listing.errors.full_messages.to_sentence
+      render 'new'
+    end
   end
 
   def show
@@ -17,6 +21,7 @@ class ListingsController < ApplicationController
 
   def edit
     @listing = Listing.find(params[:id])
+    @category = @listing.category
   end
 
   def update
@@ -39,10 +44,13 @@ class ListingsController < ApplicationController
     @listing = Listing.search(params)
   end
 
+  def mylistings
+  end
+
   private
 
     def listing_params
-      params.require(:listings).permit(:title, :description, :city, :state, :college, :zipcode)
+      params.require(:listing).permit(:title, :description, :city, :state, :college, :zipcode, :category_id, :body)
     end
 
 end
