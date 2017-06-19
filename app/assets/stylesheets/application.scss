@@ -8,6 +8,7 @@
 @import "modules/avatar";
 @import "modules/user";
 @import "modules/listingsshow";
+@import "pages";
 @import "contacts";
 @import "listings";
 @import "create";
@@ -78,7 +79,7 @@ body {
 }
 
 #main_footer {
-  position: relative;
+  position: absolute;
   width: 100%;
   bottom: 0;
   height: 60px;

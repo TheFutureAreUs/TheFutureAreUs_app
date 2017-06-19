@@ -1,17 +1,15 @@
 <h1 class="page_title">Contact Us</h1>
 
-<div class="skinny_wrapper wrapper_padding">
+<div class="skinny_wrapper wrapper_padding contact-body">
   <%= form_for @contact do |f| %>
     <%= f.label :name %><br />
     <%= f.text_field :name,  required: true %>
 
     <br />
-    <br />
 
     <%= f.label :email %><br />
     <%= f.email_field :email,  required: true %>
 
-    <br />
     <br />
 
     <%= f.label :message %><br />

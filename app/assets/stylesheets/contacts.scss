@@ -3,6 +3,31 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $border: #E9E9E9;
 
+.contact-body {
+	width: 500px;
+  height: 500px;
+  //overflow-y: auto;
+  max-width: 3000px;
+  max-height: 800px;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.09);
+  width: 50%;
+  margin: auto;
+  margin-bottom: 50px;
+  background: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  border-radius: 3px;
+	padding-bottom:60px;   /* Height of the footer */
+}
+
+.page_title {
+	text-align: center;
+	border-bottom: 1px solid $border;
+	padding: 1em 0;
+	font-size: 2rem;
+	text-transform: uppercase;
+}
+
 .hidden {
   display: none;
 }
@@ -25,13 +50,6 @@ $border: #E9E9E9;
 	height: 300px;
 }
 
-.page_title {
-	text-align: center;
-	border-bottom: 1px solid $border;
-	padding: 1em 0;
-	font-size: 2rem;
-	text-transform: uppercase;
-}
 
 label {
 	display: inline-block;
@@ -40,4 +58,4 @@ label {
 	font-weight: bold;
 	letter-spacing: 2.5px;
 	font-size: 1em;
-}
+} 
