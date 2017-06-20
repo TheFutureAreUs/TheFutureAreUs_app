@@ -11,9 +11,8 @@
       <div>
         <h4 class="listing-title"><%= link_to @listing.title, @listing %></h1>
         <p class="tags"><%= raw @listing.tags.map { |t| link_to t.name, listings_path(tag: t.name) }.join(', ') %></p>
-        <%= link_to @listing do %>
-          <p class="card-text"><%= truncate(@listing.description, length: 130) %></p>
-        <% end %>
+        <p class="card-text"><%= truncate(@listing.description, length: 130) %></p>
+        <%= link_to 'Read', @listing, class: 'button' %>
       </div>
         <% if @listing.user = current_user %>
           <p><%= link_to 'edit', edit_listing_path %></p>
