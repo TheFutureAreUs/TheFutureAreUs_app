@@ -8,6 +8,7 @@
 @import "modules/avatar";
 @import "modules/user";
 @import "modules/listingsshow";
+@import "modules/homecategory";
 @import "pages";
 @import "contacts";
 @import "listings";
@@ -65,9 +66,10 @@ $dark: #424652;
 
 .page-header {
   padding-bottom: 9px;
-  margin: 40px 0 20px;
-  border-bottom: 1px solid #eee;
-}
+  margin: 0px 0 20px;
+  height: 700px;
+  border-bottom: none;
+} 
 // ----------------------------------------------------------------------------------
 
 
@@ -76,13 +78,15 @@ body {
   font-family: 'Bubbler One', sans-serif;
   // margin-bottom: 60px;
   background: rgb(244, 245, 247);
+  height: 100%;
+  margin: 0;
 }
 
 #main_footer {
-  position: absolute;
+  position: relative;
   width: 100%;
   bottom: 0;
-  height: 60px;
+  height: 10%;
   background-color: white;
   padding: 2.5em 5%;
 	border-top: 1px solid $border;

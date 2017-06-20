@@ -1,0 +1,57 @@
+.card-topper {
+  border: none;
+  border-radius: 0;
+  height: 200px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20px;
+  background-color: white;
+  white-space: nowrap;
+}
+
+.side-scroll {
+  width: 500;
+  height: 200px;
+  overflow-x: scroll;
+  white-space: nowrap;
+  max-width: 5000px;
+  max-height: 300px;
+  text-align: center;
+}
+
+.card-top-title {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.parallax-struct {
+  background-color: white;
+  padding: 50px 80px;
+}
+
+.top {
+  background-image: url(TheFutureAreUs.jpg);
+  min-height: 100%;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.search-func {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+}
+/* .card-bloc {
+  padding: 10px;
+  .card-title {
+    font-size: 1.3rem;
+    margin-bottom: 0;
+  }
+} */
