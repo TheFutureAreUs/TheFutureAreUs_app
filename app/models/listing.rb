@@ -8,6 +8,8 @@ class Listing < ActiveRecord::Base
   validates_presence_of :body
   validates_presence_of :city
   validates_presence_of :state
+  validates_presence_of :tags
+  validates_presence_of :zipcode
 
 
   acts_as_taggable # Alias for acts_as_taggable_on :tags

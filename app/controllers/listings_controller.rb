@@ -1,4 +1,8 @@
 class ListingsController < ApplicationController
+  # user has to be logged in to post listings
+  before_filter :authenticate_user!, only: [:new, :create]
+  # makes sure random people won't be able to edit, delete, or update listings
+  before_filter :is_user?, only: [:edit, :update, :delete]
 
   def new
     @listing = Listing.new
@@ -48,6 +52,13 @@ class ListingsController < ApplicationController
 
     def listing_params
       params.require(:listing).permit(:title, :description, :city, :state, :college, :zipcode, :category_id, :body, :tag_list)
+    end
+
+    def is_user?
+      @listing = Listing.find(params[:id])
+      unless current_user = @listing.user 
+        redirect_to root_path, alert: "Sorry, you are not the user of this listing."
+      end
     end
 
 end
