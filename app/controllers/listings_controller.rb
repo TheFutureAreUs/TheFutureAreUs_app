@@ -44,8 +44,6 @@ class ListingsController < ApplicationController
     @listing = Listing.search(params)
   end
 
-  def mylistings
-  end
 
   private
 
