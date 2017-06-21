@@ -1,0 +1,23 @@
+<tr>
+  <td><%= link_to listing.title, listing_path(@listings) %></td>
+  <td></td>
+
+  <td><%= link_to 'Edit', edit_listing_path(listing), class: 'btn btn-sm btn-warning' %></td>
+  <td><%= link_to 'Delete', listing_path(listing), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger'  %></td>
+</tr>
+
+<!--
+      <% if @listings.present? %>
+        <% @listings.each do |f| %>
+        <li>
+          <span>
+            <%= f.created_at.strftime('%B %d, %Y') %>
+          </span>
+          <%= link_to f.title, f %> - (<%= f.city %>, <%= f.state %>)
+        <li>
+        <% end %>
+      <% else %>
+        <p>No listings found!</p>
+      <% end %>
+  </div>
+-->

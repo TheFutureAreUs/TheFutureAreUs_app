@@ -1,32 +1,14 @@
-<h1>My Listings</h1>
+<h1 class="mylistings">My Listings</h1>
 
-<div class="topbar">
-  <div class="container">
-    <div class="vartical-center">
-      <%= link_to 'Home', root_path %> > my listings 
-    </div>
+<div class="row">
+  <div>
+   <%= link_to 'New Listing', new_listing_path, class: 'btn btn-primary btn-lg new-btn' %>
   </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="newest">newest</div>
-     <div class="oldest">oldest</div>
-     <div class="highest-price">highest-price</div>
-    <div class="lowest-price">lowest-price</div>
-
-    <ul class="list-margin">
-      <% if @listings.present? %>
-        <% @listings.each do |f| %>
-        <li>
-          <span>
-            <%= f.created_at.strftime('%B %d, %Y') %>
-          </span>
-          <%= link_to f.title, f %> - (<%= f.city %>, <%= f.state %>)
-        <li>
-        <% end %>
-      <% else %>
-        <p>No listings found!</p>
-      <% end %>
-    </ul>
-  </div>
+  <table class="table table-stripped">
+    <tr>
+      <th colspan="5">Title</th>
+    </tr>
+    <%= render @listings %>
+  </table>
+  <br />
 </div>

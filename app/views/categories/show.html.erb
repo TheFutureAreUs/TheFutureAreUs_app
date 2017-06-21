@@ -5,4 +5,26 @@
     </div>
   </div>
 </div>
-<h1>Category Listing</h1>
+<div class="container">
+  <div class="row">
+    <div class="newest">newest</div>
+    <div class="oldest">oldest</div>
+    <div class="highest-price">highest-price</div>
+    <div class="lowest-price">lowest-price</div>
+  </div>
+  <div>
+    <% if @listings.present?  %>
+      <% @listings.each do |f| %>
+        <div class="post-panel">
+          <h4 class="listing-title"><%= link_to f.title, f %></h1>
+          <p class="tags"><%= raw f.tags.map { |t| link_to t.name, listings_path(tag: t.name) }.join(', ') %></p>
+          <p class="card-text"><%= truncate(f.description, length: 130) %></p>
+          <%= link_to 'Read', f, class: 'button' %>
+            <%= f.created_at.strftime('%B %d, %Y') %> - (<%= f.city %>, <%= f.state %>)
+        </div>
+      <% end %>
+    <% else %>
+      <p>No listings found!</p>
+    <% end %>
+  </div>
+</div>
