@@ -1,1 +1,82 @@
-<h1>Edit Page</h1>
+<h1 class="page_title">Edit Listing</h1>
+
+<%= form_for(@listing) do |f| %>
+  <div class="row">
+    <div class="col-md-4">
+
+      <div class="card">
+        <!--<div class="card-block">
+          <h4 class="card-title">
+            <span class="thin-text"><%= @listing.title %></span>
+          </h4>
+        </div>-->
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="field">
+              <%= f.label :title%><br />
+              <%= f.text_field :title, class: "form-control"%>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="field">
+              <%= f.label :description %><br />
+              <%= f.text_field :description, class: "form-control" %>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="field">
+              <%= f.label :category_id %><br />
+              <%= f.select :category_id, Category.all.map { |f| [f.name, f.id] } %>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="field">
+              <%= f.label 'Tags' %>
+              <%= f.text_field :tag_list, class: 'form-control' %>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="field">
+              <%= f.label :state %>
+              <%= f.text_field :state, class: "form-control" %>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="field">
+              <%= f.label :city %><br />
+              <%= f.text_field :city, class: "form-control" %>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="field">
+              <%= f.label :college %><br />
+              <%= f.text_field :college, class: "form-control" %>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="field">
+              <%= f.label :zipcode %><br />
+              <%= f.text_field :zipcode, class: "form-control", maxlength: "5" %>
+            </div>
+          </li>
+          <li class="list-group-items">
+            <div class="actions">
+              <%= f.submit "Update", class: "btn btn-success btn-block" %>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <% if @listing.persisted? %>
+      <%= link_to 'Show', @listing %> |
+      <% end %>
+      <%= link_to 'Back', root_path %>
+
+    </div>
+    <div class="col-md-8 new-description">
+      <div class="field">
+        <%= f.text_area :body %>
+      </div>
+    </div>
+  </div>
+<% end %>
