@@ -6,7 +6,7 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
   border-radius: 3px;
   text-align: left;
-  width: 600px;
+  width: 700px;
 }
 
 #post-panel {
@@ -20,4 +20,40 @@
 
 .new-btn {
   margin-bottom: 20px;
+}
+
+.listing-title {
+  color: rgba(0,0,0,0.8);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 29px;
+  letter-spacing: -.022em;
+  line-height: 1.12;
+}
+
+.listing-desc {
+  font-size: 21px;
+  line-height: 1.18;
+  letter-spacing: -.022em;
+}
+
+.read-more {
+  padding-bottom: 1.4em;
+  color: rgba(0,0,0,0.44);
+}
+
+.time {
+  padding-bottom: 1.4em;
+  color: rgba(0,0,0,0.44);
+}
+
+.tags {
+  padding-bottom: 1.4em;
+  padding-top: 1em;
+  color: rgba(0,0,0,0.44);
+}
+
+.listing-bold {
+  font-size: 35px;
+  font-weight: bold;
 }

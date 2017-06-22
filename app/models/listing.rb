@@ -8,7 +8,7 @@ class Listing < ActiveRecord::Base
   validates_presence_of :body
   validates_presence_of :city
   validates_presence_of :state
-  validates_presence_of :tags
+  validates_presence_of :tag_list
   validates_presence_of :zipcode
   validates_presence_of :contact_info
 

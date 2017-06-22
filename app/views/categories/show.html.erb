@@ -5,20 +5,25 @@
     </div>
   </div>
 </div>
+
 <div class="container">
   <div class="certain-cat">
-    <% if @listings.present?  %>
-      <% @listings.each do |f| %>
-        <div class="post-panel">
-          <h4 class="listing-title"><%= link_to f.title, f %></h1>
-          <p class="tags"><%= raw f.tags.map { |t| link_to t.name, listings_path(tag: t.name) }.join(', ') %></p>
-          <p class="card-text"><%= truncate(f.description, length: 130) %></p>
-          <%= link_to 'Read', f, class: 'button' %>
-            <%= f.created_at.strftime('%B %d, %Y') %> - (<%= f.city %>, <%= f.state %>)
-        </div>
+    <div class="col-md-1 col-lg-2"></div>
+    <div class="col-md-10 col-lg-8 text-xs-center">
+      <% if @listings.present?  %>
+        <% @listings.each do |f| %>
+          <div class="post-panel">
+            <h4 class="listing-title listing-bold"><%= link_to f.title, f %></h1>
+            <p class="tags"><%= raw f.tags.map { |t| link_to t.name, listings_path(tag: t.name) }.join(', ') %></p>
+            <p class="listing-desc"><%= truncate(f.description, length: 130) %></p>
+            <%= link_to 'Read More', f, class: 'read-more' %><br />
+              <br />
+              <div class="time"><%= f.created_at.strftime('%B %d, %Y') %> - (<%= f.city %>, <%= f.state %>)</div>
+          </div>
+        <% end %>
+      <% else %>
+        <p>No listings found!</p>
       <% end %>
-    <% else %>
-      <p>No listings found!</p>
-    <% end %>
+    </div>
   </div>
 </div>
