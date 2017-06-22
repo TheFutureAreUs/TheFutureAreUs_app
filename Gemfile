@@ -29,7 +29,6 @@ gem 'slide-down-alerts-rails', '~> 0.0.2'
 #------------------------------------------------------------------------------------
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'byebug', platform: :mri
 end
 
