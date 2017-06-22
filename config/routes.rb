@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registration: "registrations" }
   resources :contacts, only: [:new, :create]
   resources :categories
+  resources :subscribers
 
   # Adding search functionality
   resources :listings do

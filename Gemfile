@@ -26,6 +26,7 @@ gem 'carrierwave', '~> 1.1'
 gem 'mini_magick', '~> 4.7'
 gem 'font-awesome-sass', '~> 4.7'
 gem 'slide-down-alerts-rails', '~> 0.0.2'
+gem 'stripe'
 #------------------------------------------------------------------------------------
 
 group :development, :test do
