@@ -51,7 +51,7 @@ class ListingsController < ApplicationController
   private
 
     def listing_params
-      params.require(:listing).permit(:title, :description, :city, :state, :college, :zipcode, :category_id, :body, :tag_list)
+      params.require(:listing).permit(:title, :description, :city, :state, :college, :zipcode, :category_id, :body, :tag_list, :contact_info)
     end
 
     def is_user?
