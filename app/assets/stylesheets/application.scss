@@ -12,11 +12,13 @@
 @import "modules/user";
 @import "modules/listingsshow";
 @import "modules/homecategory";
+@import "modules/search";
 @import "pages";
 @import "contacts";
 @import "listings";
 @import "create";
 @import "categories";
+@import "users";
 $highlight: #8bc6db;
 $dark: #424652;
 //-----------------------------------------------------------------------------------
@@ -24,6 +26,16 @@ $dark: #424652;
 // Navbar here-----------------------------------------------------------------------
 .well-transparent {
   background-color: white; 
+}
+
+.drop {
+  background-color: white;
+  border-color: #e7e7e7;
+  color: #777;
+}
+
+.margin-drop {
+  margin-top: 9px;
 }
 
 .eyeglass {
@@ -121,7 +133,7 @@ body {
 }
 
 a {
-  color: black;
+  color: #777;
   text-decoration: none;
 }
 

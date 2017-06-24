@@ -1,8 +1,7 @@
 <h1 class="page_title">Create Listing</h1>
-<h2>Page Listing test</h2>
 <%= form_for(@listing) do |f| %>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-sm-4">
 
       <div class="card">
         <!--<div class="card-block">
@@ -13,7 +12,7 @@
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
             <div class="field">
-              <%= f.label :title%><br />
+              <%= f.label :title %><br />
               <%= f.text_field :title, class: "form-control"%>
             </div>
           </li>

@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 ruby '2.4.0'
+gem 'pg'
 gem 'rails', '~> 5.0.3'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
@@ -40,9 +41,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :production do
-  gem 'pg'
-end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

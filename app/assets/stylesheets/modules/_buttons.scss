@@ -2,6 +2,9 @@
   border: 1px solid;
   // padding: 0.5em 1em !important;
   border-radius: 50px;
+  border-color: #e7e7e7;
+  color: #777;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
 }
 
 .navbar-nav > li > a {
@@ -16,4 +19,8 @@
 
 .button-list {
   margin-right: 10px;
+}
+
+.btn-shape {
+  margin-top: 10px;
 }

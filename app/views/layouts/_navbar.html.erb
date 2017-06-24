@@ -4,7 +4,18 @@
     <div class="container-fluid">
       <ul class="nav navbar-nav navbar-left">
           <li class="button-left left-side"><%= link_to "Home", root_path %></li>
-          <li class="button-left left-side"><%= link_to "Top Listings", root_path %></li>
+          <li class="margin-drop">
+          <div class="dropdown nav navbar-nav navbar-left">
+            <button class="drop btn btn-secondary dropdown-toggle button button-list" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <%= link_to "About", about_path%><br />
+                <%= link_to "Privacy Policy", privacy_path%><br />
+                <%= link_to "Terms of Use", terms_path%><br />
+                <%= link_to "Contact Us", new_contact_path%>
+          </div>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -15,15 +26,27 @@
         </li>
         <% if user_signed_in? %>
           <li class="button button-list"><%= link_to "Create A Listing!", new_listing_path %></li>
-          <li><%= link_to(avatar_for(current_user, size: 35), current_user) %></li>
-          <li><%= link_to 'My Account', edit_user_registration_path %></li>
-          <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
-          <li><%= link_to 'My Listings', mylistings_path %></li>
+            <li class=" dropdown dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= link_to(avatar_for(current_user, size: 35), current_user) %>
+
+            </li>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li class="dropdown-item"><%= link_to 'My Profile', current_user %></li>
+
+              <li class="dropdown-item"><%= link_to 'Edit My Profile', edit_user_path(current_user) %></li>
+
+              <li class="dropdown-item"><%= link_to 'My Account', edit_user_registration_path %></li>
+
+              <li class="dropdown-item"><%= link_to 'My Listings', mylistings_path %></li>
+
+              <li class="dropdown-item"><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
+            </div>
         <% else %>
           <li class="button"><%= link_to 'Sign In / Sign Up', new_user_session_path %></li>
         <% end %>
       </ul>
     </div>
+</div>
   </nav>
   
 </div>
