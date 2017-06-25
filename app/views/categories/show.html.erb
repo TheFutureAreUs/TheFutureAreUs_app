@@ -24,6 +24,7 @@
       <% else %>
         <p>No listings found!</p>
       <% end %>
+      <%= will_paginate @listings, previous_label: "Older", next_label: "Newer", inner_window: 2, outer_window: 0 %>
     </div>
   </div>
 </div>

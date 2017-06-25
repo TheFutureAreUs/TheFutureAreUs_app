@@ -27,6 +27,7 @@ gem 'mini_magick', '~> 4.7'
 gem 'font-awesome-sass', '~> 4.7'
 gem 'slide-down-alerts-rails', '~> 0.0.2'
 gem 'stripe'
+gem 'will_paginate', '~> 3.1'
 #------------------------------------------------------------------------------------
 
 group :development, :test do
