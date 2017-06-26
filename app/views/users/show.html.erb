@@ -1,5 +1,25 @@
-<h1>Profile for <%= @user.username %></h1>
+<div class="row">
+  <div class="col-md-1 col-lg-2"></div>
+    <div class="col-md-10 col-lg-8 text-xs-center">
+      <div class="border-profile">
+        <div>
+          <h1 class="user-profile">Profile for <%= @user.username %></h1>
+        </div>
 
-<%= avatar_for(@user) %>
-<%= @user.description %>
-<%= link_to "Edit", edit_user_path(@user) %>
+        <%= avatar_for(@user) %>
+
+        <br />
+        
+        <div class="btn-margin" >
+          <%= @user.description %>
+        </div>
+
+        <br />
+
+        <%= link_to "Edit", edit_user_path(@user), class: 'btn-margin button btn btn-md new-btn' %>
+      </div>
+    </div>
+
+  </div>
+</div>
+

@@ -1,16 +1,18 @@
-<h1 class="mylistings page_title">My Listings</h1>
+<div>
+  <h1 class="page_title">My Listings</h1>
 
-<div class="row">
-  <div class="col-sm-4">
-    <div>
-    <%= link_to 'New Listing', new_listing_path, class: 'button btn btn-md new-btn' %>
+  <div class="row container">
+    <div class="col-md-12">
+      <div>
+      <%= link_to 'New Listing', new_listing_path %>
+      </div>
+      <table class="table table-stripped">
+        <tr>
+          <th class="mylistings-title" colspan="5">Title</th>
+        </tr>
+        <%= render @listings %>
+      </table>
+      <br />
     </div>
-    <table class="table table-stripped">
-      <tr>
-        <th colspan="5">Title</th>
-      </tr>
-      <%= render @listings %>
-    </table>
-    <br />
   </div>
 </div>

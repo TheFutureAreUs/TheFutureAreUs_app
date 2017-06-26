@@ -13,7 +13,7 @@
       <% if @listings.present?  %>
         <% @listings.each do |f| %>
           <div class="post-panel">
-            <h4 class="listing-title listing-bold"><%= link_to f.title, f %></h1>
+            <h4 class="listing-title listing-bold"><%= link_to f.title, f%></h1>
             <p class="tags"><%= raw f.tags.map { |t| link_to t.name, listings_path(tag: t.name) }.join(', ') %></p>
             <p class="listing-desc"><%= truncate(f.description, length: 130) %></p>
             <%= link_to 'Read More', f, class: 'read-more' %><br />
