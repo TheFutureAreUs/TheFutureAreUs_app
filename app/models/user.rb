@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => {email: true, login: false}
 
   has_many :listings, dependent: :destroy
+  has_many :subscribers
 
   mount_uploader :avatar, AvatarUploader
   

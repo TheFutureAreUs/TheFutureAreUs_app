@@ -1,5 +1,6 @@
-class Subcriber < ActiveRecord::Base
-  
+class Subscriber < ActiveRecord::Base
+  belongs_to :user
+
   def process_payment
     customer = Stripe::Customer.create email: email,
                                        card: token,
