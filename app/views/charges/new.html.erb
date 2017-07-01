@@ -9,7 +9,7 @@
 
       <h2>Sign up</h2>
 
-        <%= form_for charges_path @user do |f| %>
+        <%= form_for charges_path do |f| %>
 
           <article>
             <% if flash[:error].present? %>
@@ -18,7 +18,7 @@
               </div>
             <% end %>
             <label class="amount">
-              <span>Amount: $9.99 </span>
+              <span>Amount: <%= pretty_amount(@amount) %></span>
             </label>
           </article>
 
@@ -51,8 +51,8 @@
 
             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                    data-description="A month's subscription"
-                    data-amount="500"
+                    data-description="<%= @description %>"
+                    data-amount="<%= @amount %>"
                     data-locale="auto"></script>
         <% end %> 
 
