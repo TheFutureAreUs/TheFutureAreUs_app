@@ -9,18 +9,9 @@
 
       <h2>Sign up</h2>
 
-        <%= form_for charges_path do |f| %>
+        <%= form_for do |f| %>
 
-          <article>
-            <% if flash[:error].present? %>
-              <div id="error_explanation">
-                <p><%= flash[:error] %></p>
-              </div>
-            <% end %>
-            <label class="amount">
-              <span>Amount: <%= pretty_amount(@amount) %></span>
-            </label>
-          </article>
+
 
               <div class="field">
                 <%= f.label :username %><br />
@@ -45,15 +36,33 @@
                 <%= f.password_field :password_confirmation, autocomplete: "off" %>
               </div>
 
+          <%= form_tag charges_path do %>
+
+              <article>
+                <% if flash[:error].present? %>
+                  <div id="error_explanation">
+                    <p><%= flash[:error] %></p>
+                  </div>
+                <% end %>
+                <label class="amount">
+                  <span>Amount: <%= pretty_amount(@amount) %></span>
+                </label>
+              </article>
+
               <div class="form-actions">
-                <%= f.button :submit %>
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                        data-description="<%= @description %>"
+                        data-amount="<%= @amount %>"
+                        data-locale="auto">
+                        
+                        "<%= f.button :submit %>"
+                </script>
+
               </div>
 
-            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                    data-description="<%= @description %>"
-                    data-amount="<%= @amount %>"
-                    data-locale="auto"></script>
+          <% end %>
+
         <% end %> 
 
         <%= render "devise/shared/links" %>

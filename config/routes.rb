@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :contacts, only: [:new, :create]
   resources :categories
   resources :charges, only: [:new, :create]
+  get 'thanks', to: 'charges#thanks', as: 'thanks'
   
 
   # Adding search functionality
