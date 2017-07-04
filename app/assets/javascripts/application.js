@@ -15,6 +15,8 @@
 //= require jquery.bar.custom
 //= require helpers
 //= require bootstrap-sprockets
+//= require underscore
+//= require gmaps/google
 //= require turbolinks
 //= require_tree .
 
