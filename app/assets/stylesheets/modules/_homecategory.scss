@@ -43,16 +43,17 @@
 }
 
 .top {
-  background-image: url(buildings.jpeg);
+  background-image: url(TheFutureAreUs.jpg);
   height: 600px;
   position: relative;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  padding-top: 85px;
 }
 
-#map {
+.map {
     height: 400px; 
     width: 800px;
     overflow: hidden;
