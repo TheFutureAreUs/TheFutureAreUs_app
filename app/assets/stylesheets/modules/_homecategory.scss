@@ -32,6 +32,8 @@
 .parallax-struct {
   background-color: white;
   padding: 50px 80px;
+  position:relative;
+  width:100%;
 }
 
 .parallax-struct-plans {
@@ -41,14 +43,23 @@
 }
 
 .top {
-  background-image: url(TheFutureAreUs.jpg);
-  min-height: 100%;
+  background-image: url(buildings.jpeg);
+  height: 600px;
   position: relative;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+#map {
+    height: 400px; 
+    width: 800px;
+    overflow: hidden;
+    text-align: center;
+    margin-left: 205px; 
+    margin-right: auto;
+  }
 
 .top-about {
   background-image: url(randompic.jpeg);
