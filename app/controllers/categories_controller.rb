@@ -14,6 +14,12 @@ class CategoriesController < ApplicationController
     @childcare = @category[9]
     @event_services = @category[10]
     @other = @category[11]
+
+    @listing = Listing.all
+    @hash = Gmaps4rails.build_markers(@listing) do |listing, marker|
+      marker.lat listing.latitude
+      marker.lng listing.longitude
+    end
   end
 
   def show

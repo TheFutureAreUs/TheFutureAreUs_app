@@ -118,7 +118,10 @@ handler.buildMap({
       styles:    mapStyle
     }
   },
-  function(){ }
-);
+  function(){  
+      markers = handler.addMarkers(<%=raw @hash.to_json %>);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+  });
     
 </script>    
