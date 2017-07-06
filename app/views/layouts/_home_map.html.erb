@@ -1,5 +1,5 @@
 <div style='width: 800px;'>
-    <div class="map" id="custom_style" style='width: 800px; height: 400px;'></div>
+    <div class="map" id="custom_style" style='width: 1000px; height: 400px;'></div>
 </div>
 
 <script type="text/javascript">
@@ -122,6 +122,7 @@ handler.buildMap({
       markers = handler.addMarkers(<%=raw @hash.to_json %>);
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
+      handler.getMap().setZoom(5);
   });
     
 </script>    
