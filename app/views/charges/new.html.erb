@@ -9,9 +9,7 @@
 
       <h2>Sign up</h2>
 
-        <%= form_for do |f| %>
-
-
+        <%= form_for(resource, as: resource_name, url: charges_path(resource_name), html: { method: :post }) do |f| %>
 
               <div class="field">
                 <%= f.label :username %><br />
@@ -36,7 +34,7 @@
                 <%= f.password_field :password_confirmation, autocomplete: "off" %>
               </div>
 
-          <%= form_tag charges_path do %>
+          <%= form_for(resource, as: resource_name, url: charges_path(resource_name), html: { method: :post }) do %>
 
               <article>
                 <% if flash[:error].present? %>
@@ -50,16 +48,16 @@
               </article>
 
               <div class="form-actions">
+                
                 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                         data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                         data-description="<%= @description %>"
                         data-amount="<%= @amount %>"
                         data-locale="auto">
-                        
-                        "<%= f.button :submit %>"
+                    "<%= f.button :submit %>"
                 </script>
-
               </div>
+              
 
           <% end %>
 
