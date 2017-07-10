@@ -33,6 +33,7 @@
   border: 1px solid rgba(0,0,0,0.09);
   width: 50%;
   margin: auto;
+  margin-top: 50px;
   margin-bottom: 50px;
   background: white;
   box-shadow: 0 1px 4px rgba(0,0,0,0.07);
@@ -79,5 +80,16 @@ input[type="file"] {
 .btn-margin {
   margin-top: 10px;
 }
+
+.user_desc {
+  height: 600px;
+  width: 600px;
+}
+
+.panel-body {
+  margin-top: 30px;
+}
+
+
 
 

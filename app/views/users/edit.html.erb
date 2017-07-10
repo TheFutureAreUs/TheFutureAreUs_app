@@ -1,41 +1,46 @@
 
 <div class="edit-profile">
-    <h1 class="edit-title">Edit Profile</h1>
+    <h1 class="edit-title"><em>Edit Profile</em></h1>
     <%= form_for(@user, html: { multipart: true }) do |f| %>
   
             <div class="form-group">
-                <%= f.label :avatar, class: 'col-sm-2 control-label' %><br />
+                <%= f.label :avatar, class: 'col-sm-2 control-label' %>
+                <br />
+                <br />
                 <div class="col-sm-6">
                     <%= f.file_field :avatar %>
                 </div>
             </div>
-
             <br />
             <br />
 
             <div class="form-group">
-                <%= f.label :username, class: 'col-sm-2 control-label' %><br />
+                <%= f.label :username, class: 'col-sm-2 control-label' %>
+                <br />
+                <br />
                 <div class="col-sm-6">
                     <%= f.text_field :username, autofocus: true,  class: "form-control" %>
                 </div>
             </div>
-
             <br />
             <br />
 
             <div class="form-group">
-                <%= f.label :description, class: 'col-sm-2 control-label' %><br />
+                <%= f.label :description, class: 'col-sm-2 control-label' %>
+                <br />
+                <br />
                 <div class="col-sm-6">
-                    <%= f.text_area :description, class: "form-control" %>
+                    <%= f.text_area :description, class: "form-control user_desc" %>
                 </div>
             </div>
-
             <br />
             <br />
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-6">
-                    <%= f.submit "Save Changes", class: "btn btn-primary" %>
+                    <br />
+                    <br />
+                    <%= f.submit "Save Changes", class: "col-sm-2 control-label btn btn-primary" %>
                 </div>
             </div>
     <% end %>
