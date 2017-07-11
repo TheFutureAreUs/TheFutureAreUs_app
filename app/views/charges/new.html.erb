@@ -43,7 +43,7 @@
                 <br />
                 <br />
                 <label class="amount">
-                  <span>Monthly Subscription: <%= pretty_amount(@amount) %></span>
+                  <span>Monthly Subscription: <%= pretty_amount(@monthly_amount) %></span>
                 </label>
               </article>
 
@@ -51,8 +51,8 @@
                 
                 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                         data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                        data-description="<%= @description %>"
-                        data-amount="<%= @amount %>"
+                        data-description="<%= @monthly_description %>"
+                        data-amount="<%= @monthly_amount %>"
                         data-locale="auto">
                     "<%= f.button :submit %>"
                 </script>
@@ -69,7 +69,7 @@
                 <br />
                 <br />
                 <label class="amount">
-                  <span>Yearly Subscription: <%= pretty_amount(@amount) %></span>
+                  <span>Yearly Subscription: <%= pretty_amount(@yearly_amount) %></span>
                 </label>
               </article>
 
@@ -77,8 +77,8 @@
                 
                 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                         data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                        data-description="<%= @description %>"
-                        data-amount="<%= @amount %>"
+                        data-description="<%= @yearly_description %>"
+                        data-amount="<%= @yearly_amount %>"
                         data-locale="auto">
                     "<%= f.button :submit %>"
                 </script>

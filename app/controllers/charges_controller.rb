@@ -11,8 +11,11 @@ class ChargesController < ApplicationController
                                           stripe_token: params[:stripeToken])
 
     charge = StripeTool.create_charge(customer_id: customer.id,
-                                      amount: @amount,
-                                      description: @description)
+                                      amount: @monthly_amount,
+                                      amount: @yearly_amount,
+                                      description: @monthly_description,
+                                      description: @yearly_description)
+
     
     redirect_to thanks_path
 
@@ -27,11 +30,13 @@ class ChargesController < ApplicationController
   private
 
     def amount_to_be_charged
-      @amount= 999
+      @monthly_amount= 999
+      @yearly_amount = 8999
     end
 
     def description
-      @description = "Monthly Subscription"
+      @monthly_description = "Monthly Subscription"
+      @yearly_description = "Yearly Subscription"
     end
 
 end
