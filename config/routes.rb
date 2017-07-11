@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :contacts, only: [:new, :create]
   resources :categories
   resources :charges, only: [:new, :create]
-  
+  resources :colleges
   get 'thanks', to: 'charges#thanks', as: 'thanks'
   
 

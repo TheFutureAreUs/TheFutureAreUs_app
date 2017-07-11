@@ -1,6 +1,7 @@
 class Listing < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
+  belongs_to :college
   # belongs_to :subcategory
   validates_presence_of :user_id
   validates_presence_of :title
