@@ -19,7 +19,7 @@ class CategoriesController < ApplicationController
     @hash = Gmaps4rails.build_markers(@listing) do |listing, marker|
       marker.lat listing.latitude
       marker.lng listing.longitude
-      marker.infowindow "<a target='blank' href='https://www.google.com/maps/place/"+"#{listing.full_address}"+">Get Directions With Google Maps</a>"
+      marker.infowindow listing.title
 		  marker.json({ title: listing.title })
     end
   end

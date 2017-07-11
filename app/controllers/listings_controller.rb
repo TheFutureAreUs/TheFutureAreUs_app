@@ -45,7 +45,22 @@ class ListingsController < ApplicationController
   end
 
   def search
-    @listing = Listing.search(params)
+    #@listing = Listing.search(params)
+    @location = params[:search]
+    @distance = prams[:miles]
+    @listings = Listing.near(@location, @distance)
+
+    if @location.empty?
+      gflash notice: "You can't search without a search term; please enter a location and retry!"
+      redirect_to "/"
+    else 
+      if @listings.length < 1
+        gflash notice: "Sorry! We couldn't find any farms within #{@distnace} miles of #{@location}."
+        redirect_to "/"
+      else
+        search_maps(@listings)
+      end 
+    end 
   end  
 
   private
@@ -60,5 +75,15 @@ class ListingsController < ApplicationController
         redirect_to root_path, alert: "Sorry, you are not the user of this listing."
       end
     end
+
+    def search_map(listings)
+      @listings = listings
+      @hash = Gmaps4rails.build_markers(@farms) do |listing, marker|
+        marker.lat listing.latitude
+        marker.lng listing.longitude
+        marker.infowindow "<a href='/farms/"+"#{listing.id}"+"'>#{listing.name}, #{listing.address}</a>"
+        marker.json({ title: listing.name, id: listing.id })
+      end
+	  end
 
 end
