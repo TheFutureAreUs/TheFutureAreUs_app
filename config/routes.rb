@@ -5,15 +5,18 @@ Rails.application.routes.draw do
   resources :categories
   resources :charges, only: [:new, :create]
   resources :colleges
+  resources :listings
+
   get 'thanks', to: 'charges#thanks', as: 'thanks'
+  get "/search" => "listings#search"
   
 
   # Adding search functionality
-  resources :listings do
-    collection do 
-      get 'search'
-    end 
-  end 
+  # resources :listings do
+    # collection do 
+      # get 'search'
+    # end 
+  # end 
 
   resources :users
 

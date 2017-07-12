@@ -47,16 +47,16 @@ class ListingsController < ApplicationController
   def search
     #@listing = Listing.search(params)
     @location = params[:search]
-    @distance = prams[:miles]
+    @distance = params[:miles]
     @listings = Listing.near(@location, @distance)
 
     if @location.empty?
-      gflash notice: "You can't search without a search term; please enter a location and retry!"
-      redirect_to "/"
+      flash[:notice] = "You can't search without a search term; please enter a location and retry!"
+      redirect_to root_path
     else 
       if @listings.length < 1
-        gflash notice: "Sorry! We couldn't find any farms within #{@distnace} miles of #{@location}."
-        redirect_to "/"
+        flash[:notice] = "Sorry! We couldn't find any farms within #{@distance} miles of #{@location}."
+        redirect_to root_path
       else
         search_maps(@listings)
       end 
@@ -66,7 +66,7 @@ class ListingsController < ApplicationController
   private
 
     def listing_params
-      params.require(:listing).permit(:title, :description, :city, :state, :college, :zipcode, :category_id, :body, :tag_list, :contact_info)
+      params.require(:listing).permit(:title, :description, :city, :state, :college, :zipcode,:miles, :search, :address, :category_id, :body, :tag_list, :contact_info)
     end
 
     def is_user?

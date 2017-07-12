@@ -20,7 +20,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-            <%= form_tag search_listings_path, method: :get do |f|%>
+            <%= form_tag search_path, method: :get do |f|%>
             <%= icon('search', class: 'eyeglass') %>
               <%= text_field_tag :search, nil, class: 'button button-list search-bar well well-transparent', placeholder: 'search' %>
             <% end %>
