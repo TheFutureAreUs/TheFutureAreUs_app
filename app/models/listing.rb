@@ -12,17 +12,18 @@ class Listing < ActiveRecord::Base
   validates_presence_of :tag_list
   validates_presence_of :zipcode
   validates_presence_of :contact_info
+  validates_presence_of :address
 
 
 
   acts_as_taggable # Alias for acts_as_taggable_on :tags
 
-  geocoded_by :full_address
-  after_validation :geocode
+  geocoded_by :address
+  after_validation :geocode, :if => :address_changed?
 
-  def full_address 
-    [city, state, zipcode].join(', ')
-  end
+  #def full_address 
+    #[city, state, zipcode].join(', ')
+  #end
 
   def self.search(params)
     listings = Listing.where(category_id: params[:category].to_i)

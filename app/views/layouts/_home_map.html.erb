@@ -1,6 +1,18 @@
-<div style='width: 800px;'>
-    <div class="map" id="custom_style" style='width: 1000px; height: 400px;'></div>
+<div class="ey_nav_div">
+  <%= form_tag( '/search', method: :get, class: "") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "city, state, zip, address", class: "button button-list search-bar well well-transparent" %>
+
+    <%= select_tag :miles, options_for_select([["within 25 miles", "25"],["within 50 miles", "50"], ["within 75 miles", "75"]]), class: "map_form button button-list search-bar well well-transparent" %>
+
+    <%= submit_tag "Find Listings", name: nil, :class => "button button-list search-bar well well-transparent" %>
+  <% end %>
 </div>
+
+<div style='width: 80%;'>
+    <div class="map" id="custom_style" style='width: 100%; height: 500px;'></div>
+</div>   
+
+
 
 <script type="text/javascript">
   var mapStyle = [

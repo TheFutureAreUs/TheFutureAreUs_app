@@ -99,12 +99,13 @@ $dark: #424652;
 
 
 // Footer here-----------------------------------------------------------------------
-body {
+html, body {
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
   // margin-bottom: 60px;
   background: #fafafa;
   height: 100%;
+  width: 100%;
   margin: 0;
 }
 
