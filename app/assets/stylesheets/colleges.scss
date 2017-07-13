@@ -1,3 +1,36 @@
-// Place all the styles related to the colleges controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+ul, ol {
+  list-style: none;
+}
+
+.col_list {
+  background: #37BC9B;
+  color: #fff;
+  counter-increment: myCounter;
+  margin: 0 0 30px 0;
+  padding: 13px;
+  position: relative;
+  top: 1em;
+  border-radius:  0em 2px 1em 1em;
+  padding-left: 2em;
+  font-size: 1.2em;
+  font-family: Constantia;
+}
+
+.col_list:before {
+  display: inline-block;
+  text-align: center;
+  font-size: 2em;
+  line-height: 1.3em;
+  background-color:  #48CFAD;
+  padding: 10px;
+  font-weight: bold;
+  position: absolute; 
+  top: 0;
+  left: -40px;
+  border-radius: 50%;
+  font-family: exo;
+}
+
+.col_list:nth-child(even) {
+  background-color: #434A54;
+}

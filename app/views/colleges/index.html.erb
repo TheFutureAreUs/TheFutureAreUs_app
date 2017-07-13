@@ -1,1 +1,16 @@
-<h1>List of Colleges</h1>
+<div class="row container">
+  <div class="col-md-10 col-lg-8 text-xs-center">
+    <h1>List of Colleges</h1>
+
+    <div class="col_title">
+      <div><h2>Maryland</h2></div>
+      <div>
+        <% @maryland_colleges.speccollege.each do |speccollege| %>
+          <ul>
+            <li class="col_list"><%= link_to speccollege.name %></li>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

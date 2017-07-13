@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170712023419) do
+ActiveRecord::Schema.define(version: 20170713151549) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 20170712023419) do
     t.string   "city"
     t.string   "state"
     t.string   "zipcode"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "user_id"
     t.float    "latitude"
     t.float    "longitude"
@@ -40,7 +40,14 @@ ActiveRecord::Schema.define(version: 20170712023419) do
     t.text     "contact_info"
     t.integer  "college_id"
     t.string   "address"
+    t.integer  "speccollege_id"
     t.index ["user_id"], name: "index_listings_on_user_id"
+  end
+
+  create_table "speccolleges", force: :cascade do |t|
+    t.string  "name"
+    t.integer "category_id"
+    t.integer "college_id"
   end
 
   create_table "taggings", force: :cascade do |t|

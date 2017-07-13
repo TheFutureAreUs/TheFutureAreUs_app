@@ -1,0 +1,2 @@
+class SpeccollegesController < ApplicationController
+end

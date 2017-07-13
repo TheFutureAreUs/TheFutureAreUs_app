@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   resources :contacts, only: [:new, :create]
   resources :categories
   resources :charges, only: [:new, :create]
-  resources :colleges
   resources :listings
+
+  resources :colleges do
+    resources :speccolleges
+  end
 
   get 'thanks', to: 'charges#thanks', as: 'thanks'
   get "/search" => "listings#search"

@@ -24,58 +24,81 @@ other_category = Category.where(name: 'other').first_or_create(name: 'other')
 #------------------------------------------------------------------------
 
 # Colleges and Universities----------------------------------------------
+
+maryland_colleges = College.where(name: 'Maryland Colleges/Universities').first_or_create(name: 'Maryland Colleges/Universities')
+
 # Maryland---------------------------------------------------------------
-bowie_state_university = College.where(name: 'Bowie State University').first_or_create
-coppin_state_university = College.where(name: 'Coppin State University').first_or_create
-frostburg_state_university = College.where(name: 'Frostburg State University').first_or_create
-morgan_state_university = College.where(name: 'Morgan State University').first_or_create
-salisbury_university = College.where(name: 'Salisbury State University').first_or_create
-st_marys_college_of_maryland = College.where(name: "St. Mary's College of Maryland").first_or_create
-towson_university = College.where(name: 'Towson University').first_or_create
-united_states_naval_academy = College.where(name: 'United States Naval Academy').first_or_create
-university_of_baltimore = College.where(name: 'University of Baltimore').first_or_create
-university_of_maryland_baltimorre = College.where(name: 'University of Maryland, Baltimore').first_or_create
-university_maryland_baltimore_county = College.where(name: 'University of Maryland, Baltimore County').first_or_create
-university_of_maryland_college_park = College.where(name: 'University of Maryland, College Park').first_or_create
-university_of_maryland_eastern_shore = College.where(name: 'University of Maryland, Eastern Shore').first_or_create
-university_of_maryland_university_college = College.where(name: 'University of Maryland University College').first_or_create
-university_of_maryland_biotechnology_institute = College.where(name: 'University of Maryland, Biotechnology Institute').first_or_create
-university_of_maryland_environmental_science = College.where(name: 'University of Maryland, Environmental Science').first_or_create
-usm_hagerstown = College.where(name: 'USM Hagerstown').first_or_create
-universities_at_shady_grove = College.where(name: 'Universities at Shady Grove').first_or_create
-uniformed_services_university_of_the_health_sciences = College.where(name: 'Uniformed Services University of the Health Sciences').first_or_create
-allegany_college_of_maryland = College.where(name: 'Allegany College of Maryland').first_or_create
-anne_arundel_community_college = College.where(name: 'Anne Arundel Community College').first_or_create
-baltimore_city_community_college = College.where(name: 'Baltimore City Community College').first_or_create
-carroll_community_college = College.where(name: 'Carroll Community College').first_or_create
-cecil_college = College.where(name: 'Cecil College').first_or_create
-chesapeake_college = College.where(name: 'Chesapeake College').first_or_create
-college_of_southern_maryland = College.where(name: 'College of Southern Maryland').first_or_create
-community_college_of_baltimore_county = College.where(name: 'Community College of Baltimore County').first_or_create
-frederick_community_college = College.where(name: 'Frederick Community College').first_or_create
-garrett_college = College.where(name: 'Garrett College').first_or_create
-hagerstown_community_college = College.where(name: 'Hagerstown Community College').first_or_create
-harford_community_college = College.where(name: 'Harford Community College').first_or_create
-howard_community_college = College.where(name: 'Howard Community College').first_or_create
-montgomery_college = College.where(name: 'Montgomery College').first_or_create
-prince_georges_community_college = College.where(name: "Prince George's Community College").first_or_create
-wor_wic_community_college = College.where(name: 'Wor-Wic Community College').first_or_create
-capitol_technology_university = College.where(name: 'Capitol Technology University').first_or_create
-goucher_college = College.where(name: 'Goucher College').first_or_create
-hood_college = College.where(name: 'Hood College').first_or_create
-johns_hopkins_university = College.where(name: 'Johns Hopkins University').first_or_create
-loyola_university_maryland = College.where(name: 'Loyola University Maryland').first_or_create
-maryland_institute_college_of_art = College.where(name: 'Maryland Institute College of Art').first_or_create
-maryland_university_of_integrative_health = College.where(name: 'Maryland University of Integrative Health').first_or_create
-mcdaniel_college = College.where(name: 'McDaniel College').first_or_create
-mount_st_marys_university = College.where(name: "Mount St. Mary's University").first_or_create
-notre_dame_of_maryland_university = College.where(name: 'Notre Dame of Maryland University').first_or_create
-st_johns_college = College.where(name: "St. John's College").first_or_create
-stevenson_university = College.where(name: 'Stevenson University').first_or_create
-washington_adventist_university = College.where(name: 'Washington Adventist University').first_or_create
-washington_college = College.where(name: 'Washington College').first_or_create
-capital_bible_seminary = College.where(name: 'Capital Bible Seminary').first_or_create
-ner_israel_rabbinical_college = College.where(name: 'Ner Israel Rabbinical College').first_or_create
-st_marys_seminary_and_university = College.where(name: "St. Mary's Seminary and University").first_or_create
-tesst_college_of_technology = College.where(name: 'TESST College of Technology').first_or_create
-lincoln_college_of_technology = College.where(name: 'Lincoln College of Technology').first_or_create
+Speccollege.where(name: 'Bowie State University', college_id: maryland_colleges.id).first_or_create(name: 'Bowie State University', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Coppin State University', college_id: maryland_colleges.id).first_or_create(name: 'Coppin State University', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Frostburg State University', college_id: maryland_colleges.id).first_or_create(name: 'Frostburg State University', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Morgan State University', college_id: maryland_colleges.id).first_or_create(name: 'Morgan State University', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Salisbury State University', college_id: maryland_colleges.id).first_or_create(name: 'Salisbury State University', college_id: maryland_colleges.id)
+
+
+Speccollege.where(name: "St. Mary's College of Maryland", college_id: maryland_colleges.id).first_or_create(name: "St. Mary's College of Maryland", college_id: maryland_colleges.id)
+Speccollege.where(name: 'Towson University', college_id: maryland_colleges.id).first_or_create(name: 'Towson University', college_id: maryland_colleges.id)
+Speccollege.where(name: 'United States Naval Academy', college_id: maryland_colleges.id).first_or_create(name: 'United States Naval Academy', college_id: maryland_colleges.id)
+Speccollege.where(name: 'University of Baltimore', college_id: maryland_colleges.id).first_or_create(name: 'University of Baltimore', college_id: maryland_colleges.id)
+Speccollege.where(name: 'University of Maryland, Baltimore', college_id: maryland_colleges.id).first_or_create(name: 'University of Maryland, Baltimore', college_id: maryland_colleges.id)
+
+
+Speccollege.where(name: 'University of Maryland, Baltimore County', college_id: maryland_colleges.id).first_or_create(name: 'University of Maryland, Baltimore County', college_id: maryland_colleges.id)
+Speccollege.where(name: 'University of Maryland, College Park', college_id: maryland_colleges.id).first_or_create(name: 'University of Maryland, College Park', college_id: maryland_colleges.id)
+Speccollege.where(name: 'University of Maryland, Eastern Shore', college_id: maryland_colleges.id).first_or_create(name: 'University of Maryland, Eastern Shore', college_id: maryland_colleges.id)
+Speccollege.where(name: 'University of Maryland University College', college_id: maryland_colleges.id).first_or_create(name: 'University of Maryland University College', college_id: maryland_colleges.id)
+Speccollege.where(name: 'University of Maryland, Biotechnology Institute', college_id: maryland_colleges.id).first_or_create(name: 'University of Maryland, Biotechnology Institute', college_id: maryland_colleges.id)
+
+
+Speccollege.where(name: 'University of Maryland, Environmental Science', college_id: maryland_colleges.id).first_or_create(name: 'University of Maryland, Environmental Science', college_id: maryland_colleges.id)
+Speccollege.where(name: 'USM Hagerstown', college_id: maryland_colleges.id).first_or_create(name: 'USM Hagerstown', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Universities at Shady Grove', college_id: maryland_colleges.id).first_or_create(name: 'Universities at Shady Grove', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Uniformed Services University of the Health Sciences', college_id: maryland_colleges.id).first_or_create(name: 'Uniformed Services University of the Health Sciences', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Allegany College of Maryland', college_id: maryland_colleges.id).first_or_create(name: 'Allegany College of Maryland', college_id: maryland_colleges.id)
+
+
+Speccollege.where(name: 'Anne Arundel Community College', college_id: maryland_colleges.id).first_or_create(name: 'Anne Arundel Community College', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Baltimore City Community College', college_id: maryland_colleges.id).first_or_create(name: 'Baltimore City Community College', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Carroll Community College', college_id: maryland_colleges.id).first_or_create(name: 'Carroll Community College', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Cecil College', college_id: maryland_colleges.id).first_or_create(name: 'Cecil College', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Chesapeake College', college_id: maryland_colleges.id).first_or_create(name: 'Chesapeake College', college_id: maryland_colleges.id)
+
+
+Speccollege.where(name: 'College of Southern Maryland', college_id: maryland_colleges.id).first_or_create(name: 'College of Southern Maryland', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Community College of Baltimore County', college_id: maryland_colleges.id).first_or_create(name: 'Community College of Baltimore County', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Frederick Community College', college_id: maryland_colleges.id).first_or_create(name: 'Frederick Community College', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Garrett College', college_id: maryland_colleges.id).first_or_create(name: 'Garrett College', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Hagerstown Community College', college_id: maryland_colleges.id).first_or_create(name: 'Hagerstown Community College', college_id: maryland_colleges.id)
+
+
+Speccollege.where(name: 'Harford Community College', college_id: maryland_colleges.id).first_or_create(name: 'Harford Community College', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Howard Community College', college_id: maryland_colleges.id).first_or_create(name: 'Howard Community College', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Montgomery College', college_id: maryland_colleges.id).first_or_create(name: 'Montgomery College', college_id: maryland_colleges.id)
+Speccollege.where(name: "Prince George's Community College", college_id: maryland_colleges.id).first_or_create(name: "Prince George's Community College", college_id: maryland_colleges.id)
+Speccollege.where(name: 'Wor-Wic Community College', college_id: maryland_colleges.id).first_or_create(name: 'Wor-Wic Community College', college_id: maryland_colleges.id)
+
+
+Speccollege.where(name: 'Capitol Technology University', college_id: maryland_colleges.id).first_or_create(name: 'Capitol Technology University', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Goucher College', college_id: maryland_colleges.id).first_or_create(name: 'Goucher College', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Hood College', college_id: maryland_colleges.id).first_or_create(name: 'Hood College', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Johns Hopkins University', college_id: maryland_colleges.id).first_or_create(name: 'Johns Hopkins University', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Loyola University Maryland', college_id: maryland_colleges.id).first_or_create(name: 'Loyola University Maryland', college_id: maryland_colleges.id)
+
+
+Speccollege.where(name: 'Maryland Institute College of Art', college_id: maryland_colleges.id).first_or_create(name: 'Maryland Institute College of Art', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Maryland University of Integrative Health', college_id: maryland_colleges.id).first_or_create(name: 'Maryland University of Integrative Health', college_id: maryland_colleges.id)
+Speccollege.where(name: 'McDaniel College', college_id: maryland_colleges.id).first_or_create(name: 'McDaniel College', college_id: maryland_colleges.id)
+Speccollege.where(name: "Mount St. Mary's University", college_id: maryland_colleges.id).first_or_create(name: "Mount St. Mary's University", college_id: maryland_colleges.id)
+Speccollege.where(name: 'Notre Dame of Maryland University', college_id: maryland_colleges.id).first_or_create(name: 'Notre Dame of Maryland University', college_id: maryland_colleges.id)
+
+
+Speccollege.where(name: "St. John's College", college_id: maryland_colleges.id).first_or_create(name: "St. John's College", college_id: maryland_colleges.id)
+Speccollege.where(name: 'Stevenson University', college_id: maryland_colleges.id).first_or_create(name: 'Stevenson University', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Washington Adventist University', college_id: maryland_colleges.id).first_or_create(name: 'Washington Adventist University', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Washington College', college_id: maryland_colleges.id).first_or_create(name: 'Washington College', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Capital Bible Seminary', college_id: maryland_colleges.id).first_or_create(name: 'Capital Bible Seminary', college_id: maryland_colleges.id)
+
+
+Speccollege.where(name: 'Ner Israel Rabbinical College', college_id: maryland_colleges.id).first_or_create(name: 'Ner Israel Rabbinical College', college_id: maryland_colleges.id)
+Speccollege.where(name: "St. Mary's Seminary and University", college_id: maryland_colleges.id).first_or_create(name: "St. Mary's Seminary and University", college_id: maryland_colleges.id)
+Speccollege.where(name: 'TESST College of Technology', college_id: maryland_colleges.id).first_or_create(name: 'TESST College of Technology', college_id: maryland_colleges.id)
+Speccollege.where(name: 'Lincoln College of Technology', college_id: maryland_colleges.id).first_or_create(name: 'Lincoln College of Technology', college_id: maryland_colleges.id)
