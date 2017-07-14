@@ -12,6 +12,20 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      flash[:success] = "Successfully registered"
+      redirect_to root_path
+    else
+      flash[:error] = "Cannot create a user, try again"
+    end 
+  end
+
   def update
     if @user.update(user_params)
       redirect_to @user

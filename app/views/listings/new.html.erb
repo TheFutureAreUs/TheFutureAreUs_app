@@ -1,3 +1,5 @@
+<%= javascript_include_tag 'listings.js' %>
+
 <h1 class="page_title">Create Listing</h1>
 <%= form_for(@listing) do |f| %>
   <div class="row">
@@ -42,6 +44,18 @@
           </li>
           <li class="list-group-item">
             <div class="field">
+              <%= f.label :college_id %><br />
+              <%= f.select :college_id, College.all.map { |f| [f.name, f.id] } %>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="field">
+              <%= f.label "School Name" %><br />
+              <%= f.select :speccollege_id, options_for_select([])  %>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="field">
               <%= f.label :state %>
               <%= f.text_field :state, class: "form-control" %>
             </div>
@@ -54,8 +68,8 @@
           </li>
           <li class="list-group-item">
             <div class="field">
-              <%= f.label :college %><br />
-              <%= f.text_field :college, class: "form-control" %>
+              <%= f.label :street %><br />
+              <%= f.text_field :street, class: "form-control" %>
             </div>
           </li>
           <li class="list-group-item">

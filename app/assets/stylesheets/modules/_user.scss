@@ -30,14 +30,86 @@
 
 .sign-prof {
   text-align: center;
+  //background: url("TheFutureAreUs.jpg");
   border: 1px solid rgba(0,0,0,0.09);
-  width: 50%;
+  max-width: 450px;
+  height: 430;
+  width: 665;
   margin: auto;
   margin-top: 50px;
   margin-bottom: 50px;
-  background: white;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  background: linear-gradient(rgb(78, 203, 252), white);
+  box-shadow: 0 4px 20px 10px rgba(0,0,0,0.1);
   border-radius: 3px;
+  padding: 0px;
+}
+
+.inner_cont {
+  padding-top: 24px;
+  background-image: none;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.login_body {
+  padding: 20px;
+  margin: 0px;
+}
+
+a.li-Label {
+  color: white;
+}
+
+form {
+  margin: 0 0 20px;
+}
+
+.li-Form-control {
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 18px;
+  position: relative;
+  display: block;
+  color: #777 !important;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 15px;
+}
+
+.li-Label {
+  text-align: left;
+  font-size: 14px;
+
+}
+
+.li-Input {
+  margin: 0 0 0 30px;
+  width: 80%;
+}
+
+.log-title {
+  color: #777 !important;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.log-btn {
+  background: white;
+  padding: 10px;
+  margin: 10px 50px;
+  width: 100px;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: 'Oxygen', sans-serif;
 }
 
 input[type="file"] {

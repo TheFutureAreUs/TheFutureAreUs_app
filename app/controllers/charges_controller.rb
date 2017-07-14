@@ -3,6 +3,7 @@ class ChargesController < ApplicationController
   before_action :description
 
   def new
+    @user = User.new
   end
 
   def create
@@ -11,13 +12,18 @@ class ChargesController < ApplicationController
                                           stripe_token: params[:stripeToken])
 
     charge = StripeTool.create_charge(customer_id: customer.id,
-                                      amount: @monthly_amount,
-                                      amount: @yearly_amount,
-                                      description: @monthly_description,
-                                      description: @yearly_description)
+                                      amount: @amount,
+                                      description: @description
+                                      )
 
-    
-    redirect_to thanks_path
+    @user = User.new(user_params)
+    if @user.save
+      flash[:success] = "Successfully registered"
+      redirect_to thanks_path
+    else
+      flash[:error] = "Cannot create a user, try again"
+      redirect_to root_path
+    end 
 
   rescue Stripe::CardError => e 
     flash[:error] = e.message
@@ -30,13 +36,15 @@ class ChargesController < ApplicationController
   private
 
     def amount_to_be_charged
-      @monthly_amount= 999
-      @yearly_amount = 8999
+      @amount= 999
     end
 
     def description
-      @monthly_description = "Monthly Subscription"
-      @yearly_description = "Yearly Subscription"
+      @description = "Monthly Subscription"
+    end
+
+    def user_params
+      params.require(:user).permit(:username, :email, :password, :password_confirmation)
     end
 
 end

@@ -48,17 +48,17 @@ class ListingsController < ApplicationController
     #@listing = Listing.search(params)
     @location = params[:search]
     @distance = params[:miles]
-    @listings = Listing.near(@location, @distance)
+    @listing = Listing.near(@location, @distance)
 
     if @location.empty?
       flash[:notice] = "You can't search without a search term; please enter a location and retry!"
       redirect_to root_path
     else 
-      if @listings.length < 1
-        flash[:notice] = "Sorry! We couldn't find any farms within #{@distance} miles of #{@location}."
+      if @listing.length < 1
+        flash[:notice] = "Sorry! We couldn't find any listings within #{@distance} miles of #{@location}."
         redirect_to root_path
       else
-        search_maps(@listings)
+        search_maps(@listing)
       end 
     end 
   end  
@@ -66,7 +66,7 @@ class ListingsController < ApplicationController
   private
 
     def listing_params
-      params.require(:listing).permit(:title, :description, :city, :state, :college, :zipcode,:miles, :search, :address, :category_id, :body, :tag_list, :contact_info)
+      params.require(:listing).permit(:title, :description, :city, :state, :college, :zipcode,:miles, :search, :full_address, :category_id, :body, :tag_list, :contact_info, :street)
     end
 
     def is_user?
@@ -77,11 +77,11 @@ class ListingsController < ApplicationController
     end
 
     def search_map(listings)
-      @listings = listings
-      @hash = Gmaps4rails.build_markers(@farms) do |listing, marker|
+      @listings = Listing.all
+      @hash = Gmaps4rails.build_markers(@listings) do |listing, marker|
         marker.lat listing.latitude
         marker.lng listing.longitude
-        marker.infowindow "<a href='/farms/"+"#{listing.id}"+"'>#{listing.name}, #{listing.address}</a>"
+        marker.infowindow "<a href='/listings/"+"#{listing.id}"+"'>#{listing.name}, #{listing.full_address}</a>"
         marker.json({ title: listing.name, id: listing.id })
       end
 	  end

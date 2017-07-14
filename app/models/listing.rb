@@ -1,8 +1,8 @@
 class Listing < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
-  belongs_to :college
-  belongs_to :speccollege
+  belongs_to :college, optional: true
+  belongs_to :speccollege, optional: true
   # belongs_to :subcategory
   validates_presence_of :user_id
   validates_presence_of :title
@@ -12,19 +12,20 @@ class Listing < ActiveRecord::Base
   validates_presence_of :state
   validates_presence_of :tag_list
   validates_presence_of :zipcode
+  validates_presence_of :street
   validates_presence_of :contact_info
-  validates_presence_of :address
+  validates_presence_of :full_address
 
 
 
   acts_as_taggable # Alias for acts_as_taggable_on :tags
 
-  geocoded_by :address
-  after_validation :geocode, :if => :address_changed?
+  geocoded_by :full_address
+  after_validation :geocode
 
-  #def full_address 
-    #[city, state, zipcode].join(', ')
-  #end
+  def full_address 
+    [city, state, zipcode, street].join(', ')
+  end
 
   def self.search(params)
     listings = Listing.where(category_id: params[:category].to_i)

@@ -31,5 +31,6 @@ Rails.application.routes.draw do
   match '/privacy',     to: 'pages#privacy',        via: :get
   match '/terms',       to: 'pages#terms',          via: :get
   match '/mylistings',  to: 'listings#mylistings',  via: :get
+  match '/speccolleges/find_by_college', to: 'speccolleges#find_by_college', via: :post
   # match '/contact', to: 'pages#contact', via: :get
 end
