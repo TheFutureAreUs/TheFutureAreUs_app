@@ -4,7 +4,7 @@ module SecondStripeTool
    Stripe::Customer.create(
      email: email,
      source: stripe_token,
-     plan: year_plan
+     year_plan: year_plan
    )
   end
 
@@ -19,12 +19,12 @@ module SecondStripeTool
 
 
 
-  def self.create_charge(customer_id: customer_id, amount: yearly_amount, description: year_desc)
+  def self.create_charge(customer_id: customer_id, yearly_amount: yearly_amount, year_desc: year_desc)
     Stripe::Charge.create(
       customer: customer_id,
       currency: 'usd',
-      amount: yearly_amount,
-      description: year_desc
+      yearly_amount: yearly_amount,
+      year_desc: year_desc
     )
   end
 

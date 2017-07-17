@@ -1,3 +1,61 @@
-// Place all the styles related to the speccolleges controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.college_header {
+  background-image: url(collegeheader.jpeg);
+  height: 600px;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 85px;
+}
+
+.top_box {
+  border: 1px solid black;
+  background-color: black;
+  position: center;
+  width: 400px;
+  height: 180px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 140px;
+  opacity: 0.7;
+}
+
+#title_list {
+  color: white;
+}
+
+#title_desc {
+  color: white;
+}
+
+.college_names {
+  color: rgba(0,0,0,0.6);
+  background-color: #fff;
+  padding: 0.5em 0.7em;
+  border: 1px solid #f0f0f0;
+  border-radius: 3px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+.college_wrapper {
+  padding-top: 22px;
+  padding-bottom: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.header_college {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-top: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin: 0 0 8px;
+  font-size: 17px;
+  font-weight: bold;
+  color: rgba(0,0,0,0.8);
+}

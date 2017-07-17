@@ -1,15 +1,22 @@
+<div class="college_header">
+  <div class="top_box">
+    <h1 id="title_list">List of Colleges</h1>
+    <p id="title_desc">
+      Below is a list of colleges and universities
+    </p>
+  </div>
+</div>
 <div class="row container">
   <div class="col-md-10 col-lg-8 text-xs-center">
-    <h1>List of Colleges</h1>
 
     <div class="col_title">
-      <div><h2>Maryland</h2></div>
-      <div>
-        <% @maryland_colleges.speccolleges.each do |speccollege| %>
-          <ul>
-            <li class="col_list"><%= link_to speccollege.name %></li>
-          </ul>
-        <% end %>
+        <div><h2 class="header_college">Maryland</h2></div>
+      <div class="college_wrapper">
+        <div>
+          <% @maryland_colleges.speccolleges.each do |speccollege| %>
+              <p class="college_names"><%= link_to speccollege.name %></p>
+          <% end %>
+        </div>
       </div>
       <div><h2>Georgia</h2></div>
     </div>

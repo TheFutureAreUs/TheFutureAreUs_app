@@ -19,6 +19,7 @@
 @import "modules/mylistings";
 @import "modules/section";
 @import "modules/breadcrumbs";
+@import "speccolleges";
 @import "pages";
 @import "contacts";
 @import "listings";
@@ -164,5 +165,9 @@ a {
   padding-left: 1px;
   letter-spacing: 1px;
   word-spacing: 2.5px;
+}
+
+h1 {
+  margin-bottom: 30px;
 }
 //-----------------------------------------------------------------------------------

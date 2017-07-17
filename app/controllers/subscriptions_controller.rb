@@ -15,11 +15,15 @@ class SubscriptionsController < ApplicationController
                                   year_plan: @year_plan
                                   )
     else
-      customer = SecondStripeTool.create_customer(email: params[:stripeEmail], stripe_token: params[:stripeToken])
+      customer = SecondStripeTool.create_customer(email: params[:stripeEmail],                                                      stripe_token: params[:stripeToken]
+                                                  )
 
 
-      charge = SecondStripeTool.create_charge(customer_id: customer.id, amount: @yearly_amount, description: @year_desc)
-   end 
+      charge = SecondStripeTool.create_charge(customer_id: customer.id, 
+                                              yearly_amount: @yearly_amount,
+                                              year_desc: @year_desc
+                                              )
+    end 
 
     @user = User.new(user_params)
     if @user.save
@@ -48,6 +52,10 @@ class SubscriptionsController < ApplicationController
 
     def yearly_desc
       @year_desc = "Yearly Subscripition"
+    end
+
+    def user_params
+      params.require(:user).permit(:username, :email, :password, :password_confirmation)
     end
 
 end

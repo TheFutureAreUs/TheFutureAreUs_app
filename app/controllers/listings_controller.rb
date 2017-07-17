@@ -21,11 +21,6 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
-    @hash = Gmaps4rails.build_markers(@listing) do |listing, marker|
-      marker.lat listing.latitude
-      marker.lng listing.longitude
-      marker.title listing.title
-    end
   end
 
   def edit
@@ -50,17 +45,16 @@ class ListingsController < ApplicationController
   end
 
   def search
-    #@listing = Listing.search(params)
     @location = params[:search]
     @distance = params[:miles]
     @listings = Listing.near(@location, @distance)
 
     if @location.empty?
-      flash[:notice] = "You can't search without a search term; please enter a location and retry!"
+      flash.now[:alert] = "You can't search without a search term, please enter a location and retry!"
       redirect_to root_path
     else 
       if @listings.length < 1
-        flash[:notice] = "Sorry! We couldn't find any listings within #{@distance} miles of #{@location}."
+        flash.now[:alert] = "Sorry! We couldn't find any listings within #{@distance} miles of #{@location}."
         redirect_to root_path
       else
         search_map(@listings)

@@ -44,7 +44,7 @@
                       <br />
                       <br />
                       <label class="li-Form-control li-Form-control--login">
-                        <span>Monthly Subscription: $89.99</span>
+                        <span>Yearly Subscription: $89.99</span>
                       </label>
                     </article>
 
@@ -68,7 +68,16 @@
               <% end %> 
 
               <div class="li-Form-control li-Form-control--login">
-                <%= render "devise/shared/links", class: 'li-Label' %>
+                <%= link_to  "Monthly Subscription", new_charge_path %><br />
+
+                <%- if controller_name != 'sessions' %>
+                  <%= link_to "Log in", new_session_path(resource_name) %><br />
+                <% end -%>
+
+
+                <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                  <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+                <% end -%>
               </div>
 
             </div>

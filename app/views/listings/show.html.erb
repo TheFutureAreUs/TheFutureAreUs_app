@@ -1,10 +1,9 @@
-<div class="container">
-    <ol class="breadcrumb breadcrumb-arrow">
-		<li><%= link_to 'Home', root_path %></li>
-		<li class="active"><%= link_to @listing.category.name, category_path(@listing.category) %></li>
+<ol class="breadcrumb breadcrumb-arrow">
+	<li><%= link_to 'Home', root_path %></li>
+	<li class="active"><%= link_to @listing.category.name, category_path(@listing.category) %></li>
     <li><span><%= @listing.title %></span></li>
-	</ol>
-</div>
+</ol>
+
 <div class="row">
   <div class="col-md-1 col-lg-2"></div>
   <div class="col-md-10 col-lg-8 text-xs-center">
