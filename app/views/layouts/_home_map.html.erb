@@ -95,16 +95,13 @@
         ]
     }
 ]
-</script>
-
-<script>
 
 var handler = Gmaps.build('Google');
 handler.buildMap({
     internal: {id: 'custom_style'},
     provider: {
-      zoom:      10,
-      center:    new google.maps.LatLng(33.9480, -83.3773),
+      zoom:      15,
+      center:    new google.maps.LatLng(37.0902, -95.7129),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       styles:    mapStyle
     }
@@ -114,7 +111,7 @@ handler.buildMap({
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
       handler.resetBounds();
-      handler.getMap().setZoom(5);
+      handler.getMap().setZoom(4);
    });
    google.maps.event.addDomListener(window, 'page:load', initialize);
     

@@ -1,25 +1,30 @@
+<div class="container">
+    <ol class="breadcrumb breadcrumb-arrow">
+		<li><%= link_to 'Home', root_path %></li>
+		<li class="active"><span>Listings</span></li>
+	</ol>
+</div>
 <h1>Search Page</h1>
 
-<div class="topbar">
-  <div class="container">
-    <div class="vertical-center">
-      <%= link_to 'Home', root_path %> > search
+<div class="container">
+  <div class="certain-cat">
+    <div class="col-md-1 col-lg-2"></div>
+    <div class="col-md-10 col-lg-8 text-xs-center">
+      <% if @listings.present?  %>
+        <% @listings.each do |f| %>
+          <div class="post-panel">
+            <h4 class="listing-title listing-bold"><%= link_to f.title, f%></h1>
+            <p class="tags"><%= raw f.tags.map { |t| link_to t.name, listings_path(tag: t.name) }.join(', ') %></p>
+            <p class="listing-desc"><%= truncate(f.description, length: 130) %></p>
+            <%= link_to 'Read More', f, class: 'read-more' %><br />
+              <br />
+              <div class="time"><%= f.created_at.strftime('%B %d, %Y') %> - (<%= f.city %>, <%= f.state %>)</div>
+          </div>
+        <% end %>
+      <% else %>
+        <p>No listings found!</p>
+      <% end %>
+      <%= will_paginate @listings, previous_label: "Older", next_label: "Newer", inner_window: 2, outer_window: 0 %>
     </div>
   </div>
-</div>
-<div class="container">
-  <ul class="list-margin">
-    <% if @listings.present? %>
-      <% @listings.each do |listing| %>
-      <li>
-        <span>
-          <%= listing.created_at.strftime('%B %d, %Y') %>
-        </span> 
-        <%= link_to listing.title, listing %> - (<%= listing.city %>, <%= listing.state %>)
-      </li>
-      <% end %>
-    <% else %>
-      <p>No listings found!</>
-    <% end %>
-  </ul>
 </div>

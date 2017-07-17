@@ -21,6 +21,11 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+    @hash = Gmaps4rails.build_markers(@listing) do |listing, marker|
+      marker.lat listing.latitude
+      marker.lng listing.longitude
+      marker.title listing.title
+    end
   end
 
   def edit
@@ -48,25 +53,27 @@ class ListingsController < ApplicationController
     #@listing = Listing.search(params)
     @location = params[:search]
     @distance = params[:miles]
-    @listing = Listing.near(@location, @distance)
+    @listings = Listing.near(@location, @distance)
 
     if @location.empty?
       flash[:notice] = "You can't search without a search term; please enter a location and retry!"
       redirect_to root_path
     else 
-      if @listing.length < 1
+      if @listings.length < 1
         flash[:notice] = "Sorry! We couldn't find any listings within #{@distance} miles of #{@location}."
         redirect_to root_path
       else
-        search_maps(@listing)
+        search_map(@listings)
       end 
     end 
+
+    @listings = Listing.where(params[:id]).order("created_at DESC").paginate(page: params[:page], per_page: 6)
   end  
 
   private
 
     def listing_params
-      params.require(:listing).permit(:title, :description, :city, :state, :college, :zipcode,:miles, :search, :full_address, :category_id, :body, :tag_list, :contact_info, :street)
+      params.require(:listing).permit(:title, :description, :miles, :search, :address, :category_id, :body, :tag_list, :contact_info, :college_id, :speccollege_id)
     end
 
     def is_user?
@@ -77,13 +84,13 @@ class ListingsController < ApplicationController
     end
 
     def search_map(listings)
-      @listings = Listing.all
+      @listings = listings
       @hash = Gmaps4rails.build_markers(@listings) do |listing, marker|
         marker.lat listing.latitude
         marker.lng listing.longitude
-        marker.infowindow "<a href='/listings/"+"#{listing.id}"+"'>#{listing.name}, #{listing.full_address}</a>"
-        marker.json({ title: listing.name, id: listing.id })
+        marker.infowindow "<a href='/listings/"+"#{listing.id}"+"'>#{listing.title}, #{listing.address}</a>"
+        marker.json({ title: listing.title, id: listing.id })
       end
-	  end
+    end
 
 end

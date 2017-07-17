@@ -34,8 +34,7 @@
                       <%= f.password_field :password_confirmation, autocomplete: "off", class: 'li-Input form-control' %>
                     </div>
 
-                <%= form_for(resource, as: resource_name, url: charges_path(resource_name), html: { method: :post }) do %>
-                    <!-- monthly sub -->
+                <%= form_for(resource, as: resource_name, url: charges_path(resource_name), html: { method: :post }) do |f| %>
                     <article>
                       <% if flash[:error].present? %>
                         <div id="error_explanation">
@@ -45,7 +44,7 @@
                       <br />
                       <br />
                       <label class="li-Form-control li-Form-control--login">
-                        <span>Monthly Subscription: $9.99</span>
+                        <span>Monthly Subscription: $89.99</span>
                       </label>
                     </article>
 
@@ -53,25 +52,19 @@
 
                       <%= hidden_field_tag :subscription, value: params[:subscription]='yes' %>
 
-                      
+                                          
                       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                              data-description="<%= @description %>"
-                              data-amount="<%= @amount %>"
-                              data-locale="auto">
-                          "<%= f.button :submit %>"
+                            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                            data-description="<%= @year_desc %>"
+                            data-amount="<%= @yearly_amount %>"
+                            data-locale="auto">
+                              "<%= f.button :submit %>"
                       </script>
 
                     </div>
 
-                    <!-- Yearly Sub -->
-
+                    <% end %>
                     
-
-
-                   <%= link_to  :yearly_subscription, new_subscription_path %> 
-                <% end %>
-
               <% end %> 
 
               <div class="li-Form-control li-Form-control--login">
@@ -88,5 +81,3 @@
     </div>
   </div>
 </div>
-
-
